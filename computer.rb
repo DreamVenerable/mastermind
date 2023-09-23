@@ -19,34 +19,37 @@ class Computer
     unless stop?
       continue_guess
       ai_choice
-      puts "Computer guessed #{ai_choice}"
-      p ai_choice
-      compare_guess_with_code(ai_choice, @hint)
+      puts "Computer guessed #{@ai_guess}"
+      compare_guess(@ai_guess)
       puts "Computer hints: #{@hint.to_s}"
-      #ai_algorithm
+      #ai_algorithm(choice)
       sleep 0.5
       @hint = []
     end
   end
 
   def ai_choice
-    @ai_code = @sequences.sample # .first for algorithm
+    @ai_guess = @sequences.sample
   end
 
-  def ai_algorithm
-    test_hint = []
-    @sequences.keep_if do |elem|
-      elem.each_index do |i|
-        if ai_choice[i] - elem[i] == 0
-          test_hint.push('R')
-        elsif ai_choice.any?(elem[i])
-          test_hint.unshift('W')
-        end
-      end
-      test_hint == @hint
-    end
-    p @sequences
-  end
+  # Swaszek algorithm
+  # 
+  #
+  # def ai_algorithm(choice)
+  #   test_hint = []
+  #   @sequences.keep_if { |elem| compare_test(elem) == compare_guess(@ai_code) }
+  #   p @sequences
+  # end
+
+  # def compare_test(element)
+  #   elem.each_index do |i|
+  #     if ai_guess[i] - element[i] == 0
+  #       test_hint.push('R')
+  #     elsif element.any?(@ai_guess[i])
+  #       test_hint.unshift('W')
+  #     end
+  #   end
+  # end
 
   def continue_guess
     print "Press any key\n"
