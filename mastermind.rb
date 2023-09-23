@@ -30,13 +30,12 @@ module Stop
 end
 
 module Compare
-  def compare_guess_with_code
-    p @ai_code
-    @ai_code.each_index do |i|
-      if @ai_code.any?(@number[i]) && @number[i] - @ai_code[i] == 0
-        @hint.push('R')
-      elsif @ai_code.any?(@number[i])
-        @hint.unshift('W')
+  def compare_guess_with_code(guess, arr)
+    guess.each_index do |i|
+      if @number[i] - guess[i] == 0
+        arr.push('R')
+      elsif @number.any?(guess[i])
+        arr.unshift('W')
       end
     end
   end

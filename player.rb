@@ -18,9 +18,10 @@ class Player
       sleep 0.5
       puts "Guesses remaining #{@max_rounds}"
       choice
-      compare_guess_with_code
+      compare_guess_with_code(@ai_code, @hint)
       sleep 0.5
       puts "Your hint: #{@hint.to_s}"
+      p "#{@ai_code}"
       @hint = []
     end
   end
