@@ -22,8 +22,8 @@ class Computer
       continue_guess
       ai_choice
       puts "Computer guessed #{@ai_guess}"
-      compare_guess(@ai_guess, @hint, @input)
-      puts "Computer hints: #{@hint.to_s}"
+      foo = compare_guess(@ai_guess, @hint, @input)
+      puts "Computer hints: #{foo.to_s}"
       ai_algorithm
       sleep 0.5
       @hint = []
@@ -36,23 +36,14 @@ class Computer
 
   # Swaszek algorithm
   def ai_algorithm
-    unless stop?
-      @sequences.keep_if do |elem| 
-        @scrap = @ai_guess
-        @test_hint = []
-        compare_guess(elem, @test_hint, @scrap) == @hint
-      end
+    @sequences.each do |elem| 
+      #@scrap = @ai_guess
+      @test_hint.push(compare_guess(elem, @hint, @ai_guess)) #@scrap instead of @ai_guess
     end
   end
 
-  def compare_test(elem, arr, scrap)
-    elem.each_index do |i|
-      correct_place(i, arr, scrap) if scrap[i] - elem[i] == 0
-    end
-
-    similiar = elem & scrap
-    similiar.count.times { |ele| arr.push('W') }
-    arr
+  def compare_hint_arrays
+    # code
   end
 
   # Lets the user control when computer guesses
