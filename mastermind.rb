@@ -30,16 +30,17 @@ module Stop
 end
 
 module Compare
-  def compare_guess(code)
+  def compare_guess(code, arr, guess)
     code.each_index do |i|
-      correct_place(i) if @input[i] - code[i] == 0
+      correct_place(i, arr, guess) if guess[i] - code[i] == 0
     end
-    similiar = code & @input 
-    similiar.count.times { |ele| @hint.push('W') }
+    similiar = code & guess 
+    similiar.count.times { |ele| arr.push('W') }
+    return arr
   end
 
-  def correct_place(i)
-    @hint.push('R')
-    @input[i] = 0
+  def correct_place(i, arr, input)
+    arr.push('R')
+    input[i] = 0
   end
 end
