@@ -22,15 +22,15 @@ class Computer
       puts "Computer guessed #{ai_choice}"
       p ai_choice
       compare_guess_with_code(ai_choice, @hint)
-      ai_algorithm
-      sleep 0.5
       puts "Computer hints: #{@hint.to_s}"
+      #ai_algorithm
+      sleep 0.5
       @hint = []
     end
   end
 
   def ai_choice
-    @ai_code = @sequences.first
+    @ai_code = @sequences.sample # .first for algorithm
   end
 
   def ai_algorithm
