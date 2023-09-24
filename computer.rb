@@ -12,7 +12,7 @@ class Computer
     @sequences.delete_if { |element| element == [1, 1, 2, 2] }.unshift([1, 1, 2, 2])
     @hint = []
     @test_hint = []
-    @scrap = []
+    @testing = []
     choice
     game
   end
@@ -22,8 +22,8 @@ class Computer
       continue_guess
       ai_choice
       puts "Computer guessed #{@ai_guess}"
-      foo = compare_guess(@ai_guess, @hint, @input)
-      puts "Computer hints: #{foo.to_s}"
+      @foo = compare_guess(@ai_guess, @hint, @input.dup)
+      puts "Computer hints: #{@foo.to_s}"
       ai_algorithm
       sleep 0.5
       @hint = []
@@ -37,13 +37,14 @@ class Computer
   # Swaszek algorithm
   def ai_algorithm
     @sequences.each do |elem| 
-      #@scrap = @ai_guess
-      @test_hint.push(compare_guess(elem, @hint, @ai_guess)) #@scrap instead of @ai_guess
+      @testing.push(compare_guess(elem, @test_hint, @ai_guess.dup))
+      @test_hint = []
     end
+    compare_hint_arrays
   end
 
   def compare_hint_arrays
-    # code
+    @testing.delete_if {|i| i != @foo}
   end
 
   # Lets the user control when computer guesses
