@@ -1,4 +1,5 @@
 module PlayerChoice
+  # Input from user for either guesses or secret code choice
   def choice
     begin
       @input = gets.match(/^-?[1-6]{4}$/)[0]
@@ -31,14 +32,15 @@ end
 
 module Compare
   def compare_guess(code, arr, guess)
-    code.each_index do |i|
-      correct_place(i, arr, guess) if guess[i] - code[i] == 0
-    end
+    # Right number & right placement hint
+    code.each_index { |i| correct_place(i, arr, guess) if guess[i] - code[i] == 0 }
+
+    # Right number but wrong placement
     similiar = code & guess 
     similiar.count.times { |ele| arr.push('W') }
     return arr
   end
-
+  
   def correct_place(i, arr, input)
     arr.push('R')
     input[i] = 0
