@@ -8,7 +8,7 @@ class Player
 
   def initialize
     @sequences = [*1..6].repeated_permutation(4).to_a
-    @ai_code = [1,2,2,2]#@sequences.sample
+    @ai_code = [1,1,2,2]#@sequences.sample
     @hint = []
     game
   end
@@ -19,8 +19,8 @@ class Player
       sleep 0.5
       puts "Guesses remaining #{@max_rounds}"
       choice
-      p "#{@ai_code}"
-      compare_guess(@ai_code, @hint, @input)
+      p "@ai_code = #{@ai_code}"
+      compare_guess(@ai_code.dup, @hint, @input)
       sleep 0.5
       puts "Your hint: #{@hint.to_s}"
     end

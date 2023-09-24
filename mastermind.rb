@@ -33,16 +33,16 @@ end
 module Compare
   def compare_guess(code, arr, guess)
     # Right number & right placement hint
-    code.each_index { |i| correct_place(i, arr, guess) if guess[i] - code[i] == 0 }
+    code.each_index { |i| correct_place(i, arr, code) if guess[i] - code[i] == 0 }
 
     # Right number but wrong placement
-    similiar = code & guess 
+    similiar = (code & guess).flat_map { |n| [n]*[guess.count(n), code.count(n)].min }
     similiar.count.times { |ele| arr.push('W') }
     return arr
   end
   
-  def correct_place(i, arr, input)
+  def correct_place(i, arr, code)
     arr.push('R')
-    input[i] = 0
+    code[i] = 0
   end
 end
