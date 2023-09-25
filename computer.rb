@@ -11,22 +11,20 @@ class Computer
     @sequences = [*1..6].repeated_permutation(4).to_a
     @sequences.delete_if { |element| element == [1, 1, 2, 2] }.unshift([1, 1, 2, 2])
     @hint = []
-    @test_hint = []
-    @testing = []
     choice
     game
   end
   
   def round
     unless stop?
-      continue_guess
+      @hint = []
+      #continue_guess # Uncomment to control guesses
       ai_choice
       puts "Computer guessed #{@ai_guess}"
       compare_guess(@ai_guess, @hint, @input.dup)
       puts "Computer hints: #{@hint.to_s}"
-      #ai_algorithm
+      ai_algorithm
       sleep 0.5
-      @hint = []
     end
   end
 
@@ -37,18 +35,14 @@ class Computer
   # Swaszek algorithm
   def ai_algorithm
     @bar = []
-    @sequences.each_with_index do |e, i| 
+    @sequences.each_with_index do |element, i|
       @test_hint = []
-      @bar.push(compare_guess(e, @test_hint, @ai_guess.dup))
-
-      e.keep_if {e if @hint == @bar[i]}
-      @bar.delete_if {|x| x.empty?}
-      @sequences.delete_if {|x| x.empty?}
+      @bar.push(compare_guess(@ai_guess.dup, @test_hint, element.dup))
     end
-    
-    p @bar
-    p @hint
-    p @sequences
+
+    indexes = @bar.filter_map.with_index { |ele, i| ele == @hint ? i : nil }
+
+    @sequences.replace(@sequences.values_at(*indexes))
   end
 
   # Lets the user control when computer guesses
