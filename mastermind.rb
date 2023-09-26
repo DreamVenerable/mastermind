@@ -15,11 +15,21 @@ module PlayerChoice
 end
 
 module StartGame
-  def game
+  def game(name)
     @max_rounds = 12
     while @max_rounds > 0
       round
       @max_rounds -= 1 
+    end
+    puts "#{name} lost!"
+  end
+end
+
+module GameEnd
+  def game_end(name)
+    if stop?
+      puts "#{name} won!" if stop?
+      @max_rounds = 0
     end
   end
 end

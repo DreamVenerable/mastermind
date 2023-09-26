@@ -6,13 +6,14 @@ class Computer
   include StartGame
   include Stop
   include Compare
+  include GameEnd
 
   def initialize
     @sequences = [*1..6].repeated_permutation(4).to_a
     @sequences.delete_if { |element| element == [1, 1, 2, 2] }.unshift([1, 1, 2, 2])
     @hint = []
     choice
-    game
+    game('Computer')
   end
   
   def round
@@ -26,6 +27,7 @@ class Computer
       ai_algorithm
       sleep 0.5
     end
+    game_end('Computer')
   end
 
   def ai_choice

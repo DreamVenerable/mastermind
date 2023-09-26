@@ -5,12 +5,13 @@ class Player
   include StartGame
   include Stop
   include Compare
+  include GameEnd
 
   def initialize
     @sequences = [*1..6].repeated_permutation(4).to_a
     @ai_code = @sequences.sample
     @hint = []
-    game
+    game('You')
   end
 
   def round
@@ -22,7 +23,7 @@ class Player
       compare_guess(@input.dup, @hint, @ai_code.dup)
       sleep 0.5
       puts "Your hint: #{@hint.to_s}"
-      p "#{@ai_code}"
     end
+    game_end('You')
   end
 end
