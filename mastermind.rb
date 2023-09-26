@@ -21,7 +21,7 @@ module StartGame
       round
       @max_rounds -= 1 
     end
-    puts "#{name} lost!"
+    puts "#{name} lost!" unless stop?
   end
 end
 
