@@ -1,4 +1,4 @@
-require_relative 'mastermind.rb'
+require_relative 'mastermind_modules.rb'
 require 'io/console'
 
 class Computer

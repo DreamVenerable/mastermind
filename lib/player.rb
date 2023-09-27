@@ -1,4 +1,4 @@
-require_relative 'mastermind.rb'
+require_relative 'mastermind_modules.rb'
 
 class Player
   include PlayerChoice
