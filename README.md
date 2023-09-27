@@ -1,4 +1,8 @@
-# Mastermind
+<h2 align="center"><u>Mastermind</u></h2>
+
+<p align="center">
+<br>
+</p>
 
 ## Table of Contents
 + [Overview](#overview)
