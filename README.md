@@ -1,23 +1,32 @@
-# Overview
+# Mastermind
+
+## Table of Contents
++ [Overview](#overview)
++ [How It's Made](#how_its_made)
++ [Usage](#usage)
++ [Setup](#setup)
++ [Gameplay](#gameplay)
+
+## Overview <a name = "overview"></a>
 
 This program is from a project within the Ruby path of The Odin Project called [Mastermind](https://www.theodinproject.com/lessons/ruby-mastermind) which is the second and final project of the Object Oriented Programming lesson. This project will further enhance my skills in OOP principles. The game will be played vs. the computer and will allow the computer to guess the user's code, or will allow the user to guess the computer's randomly generated code. 
 
-# How It's Made
+## How It's Made <a name = "how_its_made"></a>
 
 **Tech used:** Ruby
 
 The game was written in Ruby. It is CLI based so game will only run on there or on replit. Computer utilizes [Swaszek strategy](https://puzzling.stackexchange.com/a/8884).
 
-## Examples:
+## Usage: <a name = "usage"></a>
 
 To play it on CLI, you mut have ruby installed on your system, clone this repo, then type ```ruby game.rb``` from CLI in the lib directory and press enter.
 
 To play it on replit, click [here](https://replit.com/@DreamVenerable/HotSeveralNetframework). Then type ```ruby game.rb``` and press enter.
 
-## Setup
+## Setup <a name = "setup"></a>
 There is a code maker and a code breaker. The code maker is responsible to create a code with four numbers. The code maker can only choose a number between 1 and 6, duplicates allowed. Hints will be given in form or two letters, R and W, in random order. 
 
-## Gameplay 
+## Gameplay <a name = "gameplay"></a>
 ##### Code Maker
 
 Once you've made decisions on how the game will be established, you may begin play. The code maker will establish a code based upon the previously agreed upon rules of the game using four numbers. Once the code is established, it is not allowed to be changed and must be hidden from the code breaker. As the code breaker makes their guess/es, the code maker will utilize the four small pegs to give the code breaker clues in response to their guess. 
