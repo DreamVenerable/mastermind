@@ -2,8 +2,10 @@
 
 <p align="center">
 <br>
-![mastermind usage example](https://github.com/DreamVenerable/mastermind/blob/main/img/mastermind.gif)
 </p>
+
+![mastermind usage example](https://github.com/DreamVenerable/mastermind/blob/main/img/mastermind.gif)
+
 
 ## Table of Contents
 + [Overview](#overview)
