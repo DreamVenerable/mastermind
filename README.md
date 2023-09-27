@@ -6,13 +6,13 @@ This program is from a project within the Ruby path of The Odin Project called [
 
 **Tech used:** Ruby
 
-The game was written in Ruby. It is CLI based so game will only run on there or on replit. 
+The game was written in Ruby. It is CLI based so game will only run on there or on replit. Computer utilizes [Swaszek strategy](https://puzzling.stackexchange.com/a/8884).
 
 ## Examples:
 
 To play it on CLI, you mut have ruby installed on your system, clone this repo, then type ```ruby game.rb``` from CLI in the lib directory and press enter.
 
-To plat it on replit, click [here](https://replit.com/@DreamVenerable/HotSeveralNetframework). Then type ```ruby game.rb``` and press enter
+To play it on replit, click [here](https://replit.com/@DreamVenerable/HotSeveralNetframework). Then type ```ruby game.rb``` and press enter.
 
 ## Setup
 There is a code maker and a code breaker. The code maker is responsible to create a code with four numbers. The code maker can only choose a number between 1 and 6, duplicates allowed. Hints will be given in form or two letters, R and W, in random order. 
