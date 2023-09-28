@@ -1,6 +1,6 @@
 <h2 align="center"><u>Mastermind</u></h2>
 
-![mastermind usage example](https://github.com/DreamVenerable/mastermind/blob/main/img/mastermind.gif)
+![mastermind usage example](img/mastermind.gif)
 
 <p align="center">
 <br>
