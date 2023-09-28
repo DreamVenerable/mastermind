@@ -24,7 +24,7 @@ The game was written in Ruby. It is CLI based so game will only run on there or 
 
 ## Usage: <a name = "usage"></a>
 
-To play it on CLI, you mut have ruby installed on your system, clone this repo, then type ```ruby game.rb``` from CLI in the lib directory and press enter.
+To play it on CLI, you mut have ruby installed on your system, clone this repo, then from CLI cd into the lib directory and type ```ruby game.rb```  and press enter.
 
 To play it on replit, click [here](https://replit.com/@DreamVenerable/HotSeveralNetframework). Then type ```ruby lib/game.rb``` and press enter.
 
