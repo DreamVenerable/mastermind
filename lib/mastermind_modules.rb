@@ -21,7 +21,7 @@ module StartGame
       round
       @max_rounds -= 1 
     end
-    puts "#{name} lost!" unless stop?
+    puts "#{name} lost! \nCode was #{@ai_code}" unless stop?
   end
 end
 
@@ -43,11 +43,11 @@ end
 module Compare
   def compare_guess(code, arr, guess)
     # Right number & right placement hint
-    code.each_index { |i| correct_place(i, arr, guess) if guess[i] - code[i] == 0 }
+    code.each_index { |i| correct_place(i, arr, guess) if guess[i] == code[i] }
 
     # Right number but wrong placement
     similiar = (code & guess).flat_map { |n| [n]*[guess.count(n), code.count(n)].min }
-    similiar.count.times { |ele| arr.push('W') }
+    similiar.count.times { arr.push('W') }
     return arr
   end
   
