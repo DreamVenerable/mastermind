@@ -44,7 +44,7 @@ If a code breaker guesses the right color and location, the code maker will put 
 The code breaker's job is to guess the correct pattern for both number and order of the code makers code. After each guess, if there are correct numbers or positions or both on the board, the code maker will utilize the correct color pegs to indicate this. 
 
 ##### Example
-The code maker chooses **1-1-2-2** and the code breaker guesses **1-1-1-2** the code maker will award two red-colored pegs for the first two numbers and one red peg for the last number guess, or "R, R, W". 
+The code maker chooses **1-1-2-2** and the code breaker guesses **1-1-1-2** the code maker will award two red-colored pegs for the first two numbers and one red peg for the last number guess, or "R, R, R". 
 
 Taking that example a step further let's say the code make chose **1-1-2-2** and the code breaker chose **2-1-1-1**, the code maker would then provide a two white pegs, one for the number 2, and one for the number 1, and one red-colored peg for the second number, or "W, R, W".
 
